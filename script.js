@@ -1,13 +1,17 @@
 $(document).ready(function () {
   $("input").change(function () {
     if ($(".capital").first().val()!="" && $(".risk").first().val()!="" && $(".entry").first().val()!="" && $(".stoploss").first().val()!="") {
-      capital = $(".capital").first().val();
-      risk = $(".risk").first().val();
-      entry = $(".entry").first().val();
-      stoploss = $(".stoploss").first().val();
-      qty = Math.floor((capital * risk * 0.01) / (entry - stoploss));
-      //$(".position-size").first().val(qty);
+      const capital = $(".capital").first().val();
+      const risk = $(".risk").first().val();
+      const entry = $(".entry").first().val();
+      const stoploss = $(".stoploss").first().val();
+      const qty = Math.floor((capital * risk * 0.01) / (entry - stoploss));
+      const posValue = parseFloat(qty*entry).toFixed(2);
+      const equityRisk = parseFloat(capital * risk * 0.01).toFixed(2);
       document.getElementById("position-size").textContent = qty;
+      document.getElementById("position-value").textContent = posValue;
+      document.getElementById("equity-risk").textContent = equityRisk;
+      
     }
   });
 
