@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="bootstrap-theme.css" />
+  <script src="jquery-1.10.2.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body style="width: 300px; margin: 5px 10px;">
+  <h3 style="text-align: center">Posizer</h3>
+  <form>
+    <div class="form-group">
+      <label for="capital-input">Total Capital</label>
+      <input type="number" placeholder="Total Capital" class="form-control capital" id="capital-input" />
+    </div>
+    <div class="form-group">
+      <label for="capital-input">Risk Ratio in %</label>
+      <input type="number" placeholder="Risk Ratio in %" class="form-control risk" />
+    </div>
+    <br />
+    <div class="form-row">
+    <div class="form-group col-1">
+      <label for="capital-input">Entry</label>
+      <input type="number" placeholder="Entry Price" class="form-control entry" />
+    </div>
+    <div class="form-group col-1">
+      <label for="capital-input">Stop Loss</label>
+      <input type="number" placeholder="SL Price" class="form-control stoploss" />
+    </div>
+    </div>
+    <br />
+    <br />
+    <p>Position Size: <span id="position-size"></span></p>
+    <label>Position Value: <span id="position-value"></span></label><br />
+    <label>Equity at Risk: <span id="equity-risk"></span></label><br />
+      <!-- </div>
+      <input type="number" class="form-control result" id="position-size" readonly />
+    </div> -->
+    <br /><br />
+  </form>
+</body>
+
+</html>
