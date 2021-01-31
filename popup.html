@@ -12,6 +12,7 @@
   <h3 class="display-4" style="text-align: center; font-size: xx-large;">posizer</h3>
   <hr>
   <div class="card card-body card-text">
+    <p> <span id="stock"></span><strong><span id="price"></span></strong></p>
     <p>Position Size: <strong><span id="position-size">0</span> units</strong></p>
     <p>Position Value: <strong>Rs. <span id="position-value">0</span></strong></p>
     <p>Equity at Risk: <strong>Rs. <span id="equity-risk">0</span></strong></p>
@@ -20,11 +21,11 @@
   <form>
     <div class="form-row" style="align-content: center;">
       <div class="form-group col-6">
-        <label for="capital-input">Entry</label>
-        <input type="number" placeholder="Entry Price" class="form-control entry" />
+        <label for="entry">Entry</label>
+        <input type="number" placeholder="Entry Price" class="form-control entry" id="entry" />
       </div>
       <div class="form-group col-6">
-        <label for="capital-input">Stop Loss</label>
+        <label for="stoploss">Stop Loss</label>
         <input type="number" placeholder="SL Price" class="form-control col-md-2 stoploss" />
       </div>
     </div>
