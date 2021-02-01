@@ -3,11 +3,11 @@
 
 A chrome extension to position size your trades and estimate the brokerage and taxes with those positions on the go.
 
-## content
+## scoop inside
 - [Features](#features-you-might-like)
-- [The What](#why-position-size-even?)
-- [The Why](#what-do-the-words-mean?)
-- [The How](#how-does-it-work?)
+- [The What](#why-position-size-even)
+- [The Why](#what-do-the-words-mean)
+- [The How](#how-does-it-work)
 - [The Motive](#the-underlying-motive-to-build)
 - [Build](#develop)
 
