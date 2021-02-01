@@ -1,8 +1,8 @@
 {
     "name": "Posizer",
-    "version": "0.0.0.1",
+    "version": "1.0.0",
     "manifest_version": 2,
-    "description": "A position sizing calculator that includes brokerage and charges for NSE.",
+    "description": "A position sizing calculator for trades including brokerage and taxes.",
     "icons": {
         "128":"assets/128.png",
         "48": "assets/48.png",
