@@ -3,26 +3,27 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="bootstrap-theme.css" />
-  <script src="jquery-1.10.2.min.js"></script>
+
+  <script src="js/jquery-1.10.2.min.js"></script>
   <script src="script.js"></script>
 </head>
 
 <body style="width: 300px; margin: 5px 10px;">
-  <h3 class="display-4" style="text-align: center; font-size: xx-large;">posizer</h3>
-  <hr>
-  <div class="card card-body card-text">
-    <p> <span id="stock"></span><strong><span id="price"></span></strong></p>
-    <p>Position Size: <strong><span id="position-size">0</span> units</strong></p>
-    <p>Position Value: <strong>Rs. <span id="position-value">0</span></strong></p>
-    <p>Equity at Risk: <strong>Rs. <span id="equity-risk">0</span></strong></p>
-  </div>
+  <span class="form-row">
+  <h3 class="display-4 col-5" style="text-align: center; font-size: 38px;">posizer</h3>
+  <span class="ticker form-group input-group input-group-sm col" style="top: 10px;">
+    <span class="input-group-prepend">
+      <span class="stock input-group-text" id="stock"></span>
+    </span>
+    <input type="number" class="form-control price" readonly />
+  </span>
+</span>
   <hr>
   <form>
     <div class="form-row" style="align-content: center;">
       <div class="form-group col-6">
         <label for="entry">Entry</label>
-        <input type="number" placeholder="Entry Price" class="form-control entry" id="entry" />
+        <input id="entry" type="number" placeholder="Entry Price" class="form-control entry" />
       </div>
       <div class="form-group col-6">
         <label for="stoploss">Stop Loss</label>
@@ -31,19 +32,49 @@
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text">Total Capital</span>
+        <span class="input-group-text">Active Capital</span>
       </div>
       <input type="number" class="form-control capital" id="capital-input" />
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text">Risk Ratio in %</span>
+        <span class="input-group-text">Risk in Percent</span>
       </div>
       <input type="number" class="form-control risk" />
     </div>
-    <br />
-    <hr>
+    <div class="form-row">
+      <div class="form-group col">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" value="Add Charges" readonly>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <input type="checkbox" class="charges" id="checkCharges">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col">
+        <select class="custom-select custom-select-sm charge-type" id="chargeType" disabled>
+          <option selected value="1">Intraday Equity</option>
+          <option value="2">Delivery Equity</option>
+          <option value="3">Futures</option>
+          <option value="4">Options</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card card-body card-text">
+      <p>Position Size: &nbsp;&nbsp;&nbsp;<strong><span id="position-size">0</span> units</strong></p>
+      <p>Position Value: &nbsp;<strong>Rs. <span id="position-value">0</span></strong></p>
+      <p>Capital at Risk: &nbsp;<strong>Rs. <span id="equity-risk">0</span></strong></p>
+      <p>Tax & Charges: &nbsp;<strong>Rs. <span id="tax-charges">0</span></strong></p>
+    </div>
   </form>
+  <hr>
+  <p class="display-3" style="text-align: center; font-size: small;"><a href="https://github.com/vivek32ta"
+      target="_blank">
+      built with <span class="text-danger">&#9829;</span></a>
+  </p>
 </body>
 
 </html>
