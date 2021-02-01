@@ -1,5 +1,5 @@
 <h1>
-<img src="https://github.com/vivek32ta/posizer/blob/master/assets/16.png?raw=true"> posizer</h1>
+<img src="https://github.com/vivek32ta/posizer/blob/master/assets/48.png?raw=true"> posizer</h1>
 
 A chrome extension to position size your trades and estimate the brokerage and taxes with those positions on the go.
 
