@@ -9,46 +9,60 @@ $(document).ready(function () {
     ) {
       const capital = $(".capital").first().val();
       const risk = $(".risk").first().val();
-      const entry = $(".entry").first().val();
-      const stoploss = $(".stoploss").first().val();
-      var qty = Math.floor((capital * risk * 0.01) / (entry - stoploss));
-
-      let checkCharges = document.getElementById("checkCharges");
-      let charges = 0;
-      if (checkCharges.checked == true) {
-        let chargeType = $(".charge-type").first().val();
-        if (chargeType == 1) {
-          let chargeResult = calculateIntradayEquity(entry, stoploss, qty)
-          charges = chargeResult["total-charges"];
-        }
-        else if (chargeType == 2) {
-          let chargeResult = calculateDeliveryEquity(entry, stoploss, qty)
-          charges = chargeResult["total-charges"];
-        }
-        else if (chargeType == 3) {
-          let chargeResult = calculateFutures(entry, stoploss, qty)
-          charges = chargeResult["total-charges"];
-        }
-        else if (chargeType == 4) {
-          let chargeResult = calculateOptions(entry, stoploss, qty)
-          charges = chargeResult["total-charges"];
-        }
-      }
-      const posValue = parseFloat(qty * entry).toFixed(2);
-      const equityRisk = parseFloat(((entry - stoploss) * qty) + charges).toFixed(2);
-
-      if (Math.ceil(capital) <= Math.ceil(entry)) {
+      const entry = parseFloat($(".entry").first().val());
+      const stoploss = parseFloat($(".stoploss").first().val());
+      if (entry == stoploss) {
         document.getElementById("position-size").textContent = 0;
         document.getElementById("position-value").textContent = 0;
         document.getElementById("equity-risk").textContent = 0;
         document.getElementById("tax-charges").textContent = 0;
       }
       else {
+        var qty = Math.abs(Math.floor((capital * risk * 0.01) / (entry - stoploss)));
+        let checkCharges = document.getElementById("checkCharges");
+        let charges = 0;
+        if (checkCharges.checked == true) {
+          let chargeType = $(".charge-type").first().val();
+          if (chargeType == 1) {
+            let chargeResult = calculateIntradayEquity(entry, stoploss, qty)
+            charges = chargeResult["total-charges"];
+          }
+          else if (chargeType == 2) {
+            let chargeResult = calculateDeliveryEquity(entry, stoploss, qty)
+            charges = chargeResult["total-charges"];
+          }
+          else if (chargeType == 3) {
+            let chargeResult = calculateFutures(entry, stoploss, qty)
+            charges = chargeResult["total-charges"];
+          }
+          else if (chargeType == 4) {
+            let chargeResult = calculateOptions(entry, stoploss, qty)
+            charges = chargeResult["total-charges"];
+          }
+        }
+        const posValue = parseFloat(qty * entry).toFixed(2);
+        var equityRisk = 0;
+        equityRisk = parseFloat(((entry - stoploss) * qty) + charges).toFixed(2);
+        if (entry > stoploss) {
+          equityRisk = Math.abs(parseFloat(((entry - stoploss) * qty) + charges).toFixed(2));
+          document.getElementById("position-size").textContent = qty;
+        }
+        else {
+          equityRisk = Math.abs(parseFloat(((stoploss - entry) * qty) + charges).toFixed(2));
+          document.getElementById("position-size").textContent = "-"+qty;
+        }
 
-        document.getElementById("position-size").textContent = qty;
-        document.getElementById("position-value").textContent = posValue;
-        document.getElementById("equity-risk").textContent = equityRisk;
-        document.getElementById("tax-charges").textContent = charges;
+        if (Math.ceil(capital) <= Math.ceil(entry)) {
+          document.getElementById("position-size").textContent = 0;
+          document.getElementById("position-value").textContent = 0;
+          document.getElementById("equity-risk").textContent = 0;
+          document.getElementById("tax-charges").textContent = 0;
+        }
+        else {
+          document.getElementById("position-value").textContent = posValue;
+          document.getElementById("equity-risk").textContent = equityRisk;
+          document.getElementById("tax-charges").textContent = charges;
+        }
       }
     }
   });
