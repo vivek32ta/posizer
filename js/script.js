@@ -5,7 +5,12 @@ $(document).ready(function () {
       $(".capital").first().val() != "" &&
       $(".risk").first().val() != "" &&
       $(".entry").first().val() != "" &&
-      $(".stoploss").first().val() != ""
+      $(".stoploss").first().val() != "" &&
+
+      $(".capital").first().val() > 0 &&
+      $(".risk").first().val()  > 0  &&
+      $(".entry").first().val()  > 0 &&
+      $(".stoploss").first().val()  > 0
     ) {
       const capital = $(".capital").first().val();
       const risk = $(".risk").first().val();

@@ -23,24 +23,24 @@
     <div class="form-row" style="align-content: center;">
       <div class="form-group col-6">
         <label for="entry">Entry</label>
-        <input id="entry" type="number" placeholder="Entry Price" class="form-control entry" />
+        <input id="entry" type="number" placeholder="Entry Price" class="form-control entry" min="0" oninput="validity.valid||(value='');"/>
       </div>
       <div class="form-group col-6">
         <label for="stoploss">Stop Loss</label>
-        <input type="number" placeholder="SL Price" class="form-control col-md-2 stoploss" />
+        <input type="number" min="0" placeholder="SL Price" class="form-control col-md-2 stoploss" />
       </div>
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">Active Capital</span>
       </div>
-      <input type="number" class="form-control capital" id="capital-input" />
+      <input type="number" min="1" class="form-control capital" id="capital-input" />
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">Risk in Percent</span>
       </div>
-      <input type="number" class="form-control risk" />
+      <input type="number" min="1" class="form-control risk" />
     </div>
     <div class="form-row">
       <div class="form-group col">
