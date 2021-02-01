@@ -3,10 +3,15 @@
     "version": "0.0.0.1",
     "manifest_version": 2,
     "description": "A position sizing calculator that includes brokerage and charges for NSE.",
+    "icons": {
+        "128":"assets/128.png",
+        "48": "assets/48.png",
+        "16": "assets/16.png"
+    },
     "browser_action": {
-    	"default_icon": "19-tiny.png",
+    	"default_icon": "assets/16.png",
         "default_title": "Posizer",
-        "default_popup": "popup.html"
+        "default_popup": "index.html"
     },
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
     "permissions": [
