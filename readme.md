@@ -4,6 +4,7 @@ A chrome extension to position size your trades and estimate the brokerage and t
 
 
 **Available on [Chrome Web Store](https://chrome.google.com/webstore/detail/posizer/ifdokboipgdinjaiokegelppjdchgehf)**
+
 [<img width=75 src="https://www.gstatic.com/images/branding/product/2x/chrome_store_64dp.png">](https://chrome.google.com/webstore/detail/posizer/ifdokboipgdinjaiokegelppjdchgehf)
 
 
