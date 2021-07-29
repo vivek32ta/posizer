@@ -1,8 +1,13 @@
-<img src="https://github.com/vivek32ta/posizer/blob/master/assets/48.png?raw=true"> 
-
-# posizer
+<img style="width:75px;" src="https://github.com/vivek32ta/posizer/blob/master/assets/128.png?raw=true"><h1>posizer</h1>
 
 A chrome extension to position size your trades and estimate the brokerage and taxes with those positions on the go.
+
+[========]
+
+**Available on [Chrome Web Store](https://chrome.google.com/webstore/detail/posizer/ifdokboipgdinjaiokegelppjdchgehf)**
+[<img style="width:75px" src="https://www.gstatic.com/images/branding/product/2x/chrome_store_64dp.png">](https://chrome.google.com/webstore/detail/posizer/ifdokboipgdinjaiokegelppjdchgehf)
+
+[========]
 
 ## scoop inside
 - [Features](#features-you-might-like)
@@ -106,3 +111,9 @@ I had been struggling with my personal trading consistency and I built this to h
 
 ## p.s
 If you come across a bug or if you have an idea for a new feature, feel free to reach out to me. Or even if you wanna talk about just anything, do reach out.
+
+[========]
+
+
+## disclaimer
+This software is provided for educational purposes only and is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
